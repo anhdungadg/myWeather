@@ -1,23 +1,36 @@
 ﻿using Microsoft.Extensions.Localization;
+using System.Linq.Expressions;
+using System;
 using VaultSharp;
 using VaultSharp.V1.AuthMethods.Token;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace myWeatherAPI.Services
 {
-    public class VaultService
+    public interface IVaultService
+    {
+        Task<string> GetSecretAsync(string secretPath);
+    }
+
+    public class VaultService: IVaultService
     {
         private readonly IVaultClient _vaultClient;
 
-        public VaultService(string vaultAddress, string vaultToken)
+        public VaultService(IVaultClient vaultClient)
         {
-            var vaultClientSetting = new VaultClientSettings(vaultAddress, new TokenAuthMethodInfo(vaultToken));
-            _vaultClient = new VaultClient(vaultClientSetting);
+            _vaultClient = vaultClient;
         }
 
         public async Task<string> GetSecretAsync(string secretPath)
         {
             var secret = await _vaultClient.V1.Secrets.KeyValue.V2.ReadSecretAsync(secretPath);
-            return secret.Data.ToString();
+            if (secret?.Data?.Data == null)
+            {
+                throw new Exception("Secret not found");
+            }
+            return secret.Data.Data["api_key"].ToString();
+
         }
+
     }
 }

@@ -2,16 +2,21 @@ using Microsoft.AspNetCore.RateLimiting;
 using myWeatherAPI.Services;
 using Newtonsoft.Json;
 using System.Threading.RateLimiting;
-using VaultSharp.V1.SecretsEngines.PKI;
+using VaultSharp;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration.AddEnvironmentVariables().Build();
 var vaultAddress = config["APP_SETTINGS_VAULTADDRESS"];
-
+var appSetting_WeatherStack_API = config["APP_SETTINGS_WEATHERSTACK_API"];
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<IWeatherService, WeatherService>();      // Register IWeatherService
+//builder.Services.AddSingleton<IVaultService, VaultService>();
+builder.Services.AddSingleton<IVaultClient, VaultClient>();
+builder.Services.AddSingleton<IVaultService, VaultService>();
+
 
 // https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?view=aspnetcore-8.0
 // There many ways to approach this problem, such as using Ocelot gateway.
@@ -42,7 +47,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseRateLimiter();
-app.MapGet("/hello", () =>
+app.MapGet("/health", () =>
 {
     var currentTime = DateTime.Now;
     var result = new { system_time= currentTime};

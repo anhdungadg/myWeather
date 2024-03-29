@@ -6,8 +6,6 @@ namespace myWeatherAPI.Services
     public class WeatherService : IWeatherService
     {
         private readonly HttpClient _httpClient;
-        private readonly VaultService _vaultService;
-
         public WeatherService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -15,13 +13,11 @@ namespace myWeatherAPI.Services
 
         public async Task<WeatherResponse> GetWeatherAsync(string zipCode)
         {
-            //var requestUri = $"http://api.weatherstack.com/current?access_key=610acf4c1d203448cd6f671955c5e8aa&query={zipCode}";
+            //var requestUri = $"http://api.weatherstack.com/current?access_key=API_KEY]&query={zipCode}";
             //var response = await _httpClient.GetAsync(requestUri);
             //response.EnsureSuccessStatusCode();
             //var content = await response.Content.ReadAsStringAsync();
-
-
-
+     
 
             Random random = new Random();
             var randTemp = random.Next(101);
