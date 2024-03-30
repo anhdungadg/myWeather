@@ -23,16 +23,11 @@ This is 1st time I combined ReactJS with .NET Core. In case like this, I often u
  - Ensure that `myWatherAPI` and `myweatherclient` is your startup project
  - Hit F5 to launch
 
-* Or run the application from your terminal with Docker:
-    * xUnit
+* Or run the application from your terminal with Docker (include xUnit for unit test)
 ```sh
 cd be
 ```
-
-
    * Without xUnit
-
-
 ```sh
 cd be\myWeatherAPI
 ```
