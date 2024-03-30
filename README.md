@@ -4,9 +4,8 @@ This is 1st time I combined ReactJS with .NET Core. In case like this, I often u
 
 
 ## Techstack
-Backend: .NET Core 8.0 LTS with
-
-Frontend: ReactJS with Axios, Ant Design
+- Backend: .NET Core 8.0 LTS with
+- Frontend: ReactJS with Axios, Ant Design
 
 
 
