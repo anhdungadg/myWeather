@@ -31,13 +31,18 @@ namespace myWeatherAPI.Controllers
                 Location = weatherResponse.Location,
                 Current = weatherResponse.Current,
                 ShouldGoOutside = !weatherResponse.Current.IsRaining,
-                ShouldWearSunscreen = weatherResponse.Current.UvIndex > 3,
-                CanFlyKite = !weatherResponse.Current.IsRaining && weatherResponse.Current.Wind_speed > 15
+                ShouldWearSunscreen = weatherResponse.Current.Uv_Index > 3,
+                CanFlyKite = !weatherResponse.Current.IsRaining && weatherResponse.Current.Wind_Speed > 15
             };
             return Ok(weather);
         }
         // -----------------
 
+        [HttpGet]
+        public ObjectResult Health()
+        {
+            return Ok("It's OK: " + DateTime.Now.ToString());
+        }
 
 
 

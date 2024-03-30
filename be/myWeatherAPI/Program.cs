@@ -8,14 +8,13 @@ using VaultSharp;
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration.AddEnvironmentVariables().Build();
 var vaultAddress = config["APP_SETTINGS_VAULTADDRESS"];
-var appSetting_WeatherStack_API = config["APP_SETTINGS_WEATHERSTACK_API"];
+var appSettingWeatherStackAPI = config["APP_SETTINGS_WEATHERSTACK_API"];
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<IWeatherService, WeatherService>();      // Register IWeatherService
 //builder.Services.AddSingleton<IVaultService, VaultService>();
-builder.Services.AddSingleton<IVaultClient, VaultClient>();
-builder.Services.AddSingleton<IVaultService, VaultService>();
+
 
 
 // https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?view=aspnetcore-8.0
@@ -37,8 +36,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.Logger.LogInformation("TEST " + DateTime.Now.ToString());
-app.Logger.LogCritical(vaultAddress);
-app.Logger.LogError(config["APP_SETTINGS__Thungheim"]);
+app.Logger.LogCritical("appSetting_WeatherStack_API: " + appSettingWeatherStackAPI);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

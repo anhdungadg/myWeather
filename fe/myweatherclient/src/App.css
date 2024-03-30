@@ -1,19 +1,39 @@
-﻿#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+﻿
+.weather-widget {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    padding: 20px;
     text-align: center;
 }
 
-tr:nth-child(even) {
-    background: #F2F2F2;
+.weather-widget__header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
-tr:nth-child(odd) {
-    background: #FFF;
+.weather-widget__body {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    .weather-widget__body img {
+        height: 100px;
+        margin-right: 20px;
+    }
+
+.weather-widget__temp {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+.weather-widget__footer {
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
