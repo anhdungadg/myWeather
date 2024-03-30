@@ -25,11 +25,13 @@ This is 1st time I combined ReactJS with .NET Core. In case like this, I often u
 
 * Or run the application from your terminal with Docker:
     * xUnit
-```powershell
+```sh
 cd be
 ```
+
     * Without xUnit
-```powershell
+
+```sh
 cd be\myWeatherAPI
 ```
 
