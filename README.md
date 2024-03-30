@@ -2,6 +2,8 @@
 
 This is 1st time I combined ReactJS with .NET Core. In case like this, I often use NodeJS rather than .NET because I think the MERN stack will be suitable choice in many ways!
 
+![myWeather architecture diagram](my-weather.png)
+
 ## Prerequisites
 - Clone this repository
 - (Windows only) Install Visual Studio. Visual Studio contains tooling support for .NET Aspire that you will want to have. [Visual Studio 2022 version 17.10 Preview](https://visualstudio.microsoft.com/vs/preview/).
