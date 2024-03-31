@@ -22,7 +22,10 @@ This is 1st time I combined ReactJS with .NET Core. In case like this, I often u
 In `be\myWeatherAPI\Properties\launchSettings.json` or `be\myWeatherAPI\Dockerfile`
 APP_SETTINGS_WEATHERSTACK_API = [your weatherstack API key]
 
+If the value of `APP_SETTINGS_WEATHERSTACK_API` is null, the backend will return mock data by default.
 
+
+### Run solution
 * (Windows only) Run the application from Visual Studio:
  - Open the `myWeather.sln` file in Visual Studio
  - Ensure that `myWatherAPI` and `myweatherclient` is your startup project
