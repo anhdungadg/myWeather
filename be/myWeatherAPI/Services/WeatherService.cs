@@ -15,6 +15,11 @@ namespace myWeatherAPI.Services
             _apiKeyManager = apiKeyManager;
         }
 
+        /// <summary>
+        /// Asynchronously retrieves weather information based on the provided zip code.
+        /// </summary>
+        /// <param name="zipCode">The zip code for the location of interest.</param>
+        /// <returns>The weather response object containing the current weather information.</returns>
         public async Task<WeatherResponse> GetWeatherAsync(string zipCode)
         {
             var content = "";

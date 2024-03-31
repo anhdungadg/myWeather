@@ -15,7 +15,11 @@ namespace myWeatherAPI.Controllers
             _weatherService = weatherService;
         }
 
-        // 
+        /// <summary>
+        /// Retrieves weather information based on the provided zip code.
+        /// </summary>
+        /// <param name="zipCode">The zip code for the location</param>
+        /// <returns>The weather information for the specified zip code</returns>
         [HttpGet(Name = "GetWeather")]
         [EnableRateLimiting("fixed")]
         public async Task<IActionResult> GetWeather([FromQuery][RegularExpression(@"^\d{5}(-\d{4})?$")] string zipCode)
@@ -26,6 +30,11 @@ namespace myWeatherAPI.Controllers
             }
 
             var weatherResponse = await _weatherService.GetWeatherAsync(zipCode);
+            if (weatherResponse.Current == null)
+            {
+                return BadRequest("Weather response is null");
+            }
+
             var weather = new
             {
                 Location = weatherResponse.Location,

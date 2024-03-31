@@ -56,8 +56,6 @@ app.MapGet("/health", () =>
 app.UseCors(builder => builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
 
-//app.Logger.LogCritical("NguyHIMMM");
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
