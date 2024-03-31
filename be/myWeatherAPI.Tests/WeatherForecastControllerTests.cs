@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace myWeatherAPI.Tests
 {
+    /// <summary>
+    /// Test class for WeatherForecastController.
+    /// </summary>
     public class WeatherForecastControllerTests
     {
         private readonly IWeatherService _weatherService;
