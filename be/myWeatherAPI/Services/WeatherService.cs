@@ -43,6 +43,11 @@ namespace myWeatherAPI.Services
             return weatherResponse;
         }
 
+        /// <summary>
+        /// Generates mock data for weather information.
+        /// This method is used when the API key is not available and mock data needs to be generated.
+        /// </summary>
+        /// <returns>A JSON string representing the mock weather data.</returns>
         private string GenerateMockData()
         {
             Random random = new Random();

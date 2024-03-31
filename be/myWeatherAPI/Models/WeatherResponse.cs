@@ -47,8 +47,5 @@
         public int Visibility { get; set; }
 
         public bool IsRaining { get; internal set; }
-        //public int Wind_speed { get; set; }
     }
-
-
 }
