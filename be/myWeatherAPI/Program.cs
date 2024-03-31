@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.RateLimiting;
 using myWeatherAPI.Services;
 using Newtonsoft.Json;
 using System.Threading.RateLimiting;
-using VaultSharp;
+using myWeatherAPI.Utils;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +13,7 @@ var appSettingWeatherStackAPI = config["APP_SETTINGS_WEATHERSTACK_API"];
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<IWeatherService, WeatherService>();      // Register IWeatherService
-//builder.Services.AddSingleton<IVaultService, VaultService>();
+builder.Services.AddSingleton<IApiKeyManager, ApiKeyManager>();
 
 
 

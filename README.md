@@ -6,10 +6,7 @@ This is 1st time I combined ReactJS with .NET Core. In case like this, I often u
 
 ## Prerequisites
 - Clone this repository
-- (Windows only) Install Visual Studio. Visual Studio contains tooling support for .NET Aspire that you will want to have. [Visual Studio 2022 version 17.10 Preview](https://visualstudio.microsoft.com/vs/preview/).
-  - During installation, ensure that the following are selected:
-    - `ASP.NET and web development` workload.
-    - `.NET Aspire SDK` component in `Individual components`.
+- (Windows only) Install Visual Studio.
 - Install the latest [.NET 8 SDK](https://github.com/dotnet/installer#installers-and-binaries)
 
 
