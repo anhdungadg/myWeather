@@ -81,6 +81,7 @@ namespace myWeatherAPI.Services
                 
             }
             var weatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(content);
+            if (weatherResponse == null) { throw new Exception("An error occurred"); }
             return weatherResponse;
         }
     }
