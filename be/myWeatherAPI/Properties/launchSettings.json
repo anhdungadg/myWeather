@@ -16,7 +16,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "APP_SETTINGS_WEATHERSTACK_API": "610acf4c1d203448cd6f671955c5e8aa"
+        "APP_SETTINGS_WEATHERSTACK_API": ""
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7048;http://localhost:5015"
